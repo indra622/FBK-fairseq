@@ -24,6 +24,12 @@ for t in train dev tst-COMMON; do
   ln -s ${MUSTC_ROOT}en-$LANG/data/$t/txt/$t.* $DATA_ROOT
 done
 ```
+```
+mkdir $DATA_ROOT
+for t in train dev tst-COMMON; do
+  ln -s ${MUSTC_ROOT}en-$LANG/data/$t/wav/* $DATA_ROOT
+done
+```
 
 Once your `DATA_ROOT` is ready, run the following command to preprocess the data, where `FAIRSEQ_DIR` is the path to this Fairseq installation and `MUSTC_SAVE_DIR` is the path where you want to save the preprocessed files (it can be equal to `DATA_ROOT`):
 
